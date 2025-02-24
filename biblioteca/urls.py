@@ -15,8 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# View para a página inicial
+def index(request):
+    return render(request, 'index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='index'),  # Página inicial
+    path('registro/', lambda request: HttpResponse("Página de registro em construção!"), name='registro'),
+    path('login/', lambda request: HttpResponse("Página de login em construção!"), name='login'),
+
 ]
