@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'biblioteca.apps.usuario',  # App de usuário
+    'biblioteca.apps.livros',   # App de livros
 
 ]
 
@@ -48,8 +50,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'biblioteca.apps.usuario',  # App de usuário
-    'biblioteca.apps.livros',   # App de livros
 ]
 
 ROOT_URLCONF = 'biblioteca.urls'
