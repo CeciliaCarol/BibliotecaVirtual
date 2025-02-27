@@ -26,7 +26,7 @@ def index(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),  # Página inicial
-    path('registro/', lambda request: HttpResponse("Página de registro em construção!"), name='registro'),
+    path("usuario/", include("biblioteca.apps.usuario.urls")),  # Incluindo as URLs do app usuário
     path('login/', lambda request: HttpResponse("Página de login em construção!"), name='login'),
 
 ]
