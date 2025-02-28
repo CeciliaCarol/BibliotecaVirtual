@@ -22,11 +22,11 @@ from django.http import HttpResponse
 # View para a página inicial
 def index(request):
     return render(request, 'index.html')
+  
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),  # Página inicial
     path("usuario/", include("biblioteca.apps.usuario.urls")),  # Incluindo as URLs do app usuário
-    path('login/', lambda request: HttpResponse("Página de login em construção!"), name='login'),
 
 ]
