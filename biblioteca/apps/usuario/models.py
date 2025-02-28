@@ -2,7 +2,11 @@ from django.contrib.auth.models import AbstractUser,Group,Permission
 from django.db import models
 
 class Usuario(AbstractUser):
-    cpf = models.CharField(max_length=14, unique=True)
+    cpf = models.CharField(max_length=14, unique=True)  # CPF é único
+    email = models.EmailField(unique=True)
+
+    USERNAME_FIELD = "cpf"  # Define CPF como campo de login
+    REQUIRED_FIELDS = ["username", "email"]  # Campos obrigatórios além do CPF
 
     groups = models.ManyToManyField(
         Group,
