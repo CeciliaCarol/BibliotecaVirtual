@@ -1,0 +1,19 @@
+{% extends 'livros/base.html' %}
+
+{% block content %}
+    <div class="form-container">
+        <h2 class="form-title">📖 Adicionar / Editar Livro</h2>
+
+        <form method="post" class="styled-form">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-save">💾 Salvar</button>
+                <a href="{% url 'listar_livros' %}" class="btn btn-cancel">❌ Cancelar</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

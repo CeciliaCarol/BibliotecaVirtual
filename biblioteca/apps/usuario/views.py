@@ -33,7 +33,7 @@ def login_usuario(request):
             user = authenticate(request, cpf=cpf, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("usuario:welcome")
+                return redirect("listar_livros")
             else:
                 form.add_error(None, "CPF ou senha incorretos.")
     

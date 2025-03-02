@@ -140,3 +140,6 @@ AUTHENTICATION_BACKENDS = [
     "biblioteca.apps.usuario.backend.CPFBackend",  # Backend de autenticação por CPF
     "django.contrib.auth.backends.ModelBackend",  # Mantém o padrão do Django
 ]
+LOGIN_URL = '/admin/login/'
+LOGIN_REDIRECT_URL = '/livros/'
+LOGOUT_REDIRECT_URL = '/admin/login/'

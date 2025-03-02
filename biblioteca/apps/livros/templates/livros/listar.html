@@ -1,0 +1,27 @@
+{% extends 'livros/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="page-title">📚 Meus Livros</h2>
+        <a href="{% url 'adicionar_livro' %}" class="btn btn-add">➕ Adicionar Livro</a>
+        <div class="livros-list">
+            {% for livro in livros %}
+                <div class="livro-card">
+                    <div class="livro-details">
+                        <h3 class="livro-title">{{ livro.titulo }}</h3>
+                        <p><strong>Autor:</strong> {{ livro.autor }}</p>
+                        <p><strong>Gêneros:</strong> {{ livro.generos }}</p>
+                        <p><strong>Páginas:</strong> {{ livro.paginas }}</p>
+                    </div>
+                    <div class="livro-footer">
+                        <span class="livro-usuario">👤 <strong>Cadastrado por:</strong> {{ livro.usuario.username }}</span>
+                        <div class="livro-actions">
+                            <a href="{% url 'editar_livro' livro.id %}" class="btn btn-edit">✏️ Editar</a>
+                            <a href="{% url 'excluir_livro' livro.id %}" class="btn btn-delete">🗑️ Excluir</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
