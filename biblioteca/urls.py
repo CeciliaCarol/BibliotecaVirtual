@@ -28,5 +28,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),  # Página inicial
     path("usuario/", include("biblioteca.apps.usuario.urls")),  # Incluindo as URLs do app usuário
-
+    path('livros/', include("biblioteca.apps.livros.urls")),    # Incluindo as URLs do app livros
 ]
