@@ -6,7 +6,26 @@
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
-    <h1>Bem-vindo à Biblioteca Virtual!</h1>
-    <a href="{% url 'usuario:register' %}">Registro</a> | <a href="{% url 'usuario:login' %}">Login</a>
+<div class="index_principal">
+  <div class="index_conteudo">
+    <div class="titulo">
+      <h1 class="title-biblio">Biblioteca Virtual!</h1>
+      <p class="title-paragrafo">
+        Plataforma gratuita onde você pode cadastrar
+        seus livros favoritos.
+      </p>
+    </div>
+    <div class="btn-index">
+      <div class="btn-registrar">
+        <a class="deco-btn-registrar" href="{% url 'usuario:register' %}">Registro</a> 
+      </div>
+      <div class="btn-login">
+        <a class="deco-btn-login" href="{% url 'usuario:login' %}">Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="index_imagem">
+  </div>
+</div>
 </body>
 </html>
