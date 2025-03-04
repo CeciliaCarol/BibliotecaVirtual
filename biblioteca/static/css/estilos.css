@@ -1,12 +1,14 @@
 body {
-    background-color:rgb(222, 221, 220);
+    background-color:rgb(255, 255, 255);
 }
 
-h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 /* Designer da Tela de Listar os Livros */
+
+.page-title {
+    font-family: 'Poppins', sans-serif;
+
+}
 
 /* === BOTÕES GERAIS === */
 .btn {
@@ -26,7 +28,8 @@ h1 {
     display: inline-block;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
-    animation: pulse 1.5s infinite;
+    animation: pulse 1.5s infinite; 
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Efeito de pulsação */
@@ -40,6 +43,7 @@ h1 {
 .btn-edit {
     background: linear-gradient(135deg, #3498db, #2980b9);
     margin-right: 10px;
+    font-family: "Arial";
 }
 
 /* Hover para o botão de edição */
@@ -53,6 +57,7 @@ h1 {
     background: linear-gradient(135deg, #e74c3c, #c0392b);
     position: relative;
     overflow: hidden;
+    font-family: "Arial";
 }
 
 /* Efeito de alerta no hover */
@@ -88,8 +93,13 @@ h1 {
 /* === DETALHES DO LIVRO === */
 .livro-title {
     font-size: 1.4em;
-    color: #2c3e50;
-    font-weight: bold;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.livro-info {
+    font-family: "Arial";
 }
 
 /* === RODAPÉ DO LIVRO (USUÁRIO E BOTÕES) === */
@@ -101,6 +111,7 @@ h1 {
 
 /* === ESTILO DO NOME DO USUÁRIO === */
 .livro-usuario {
+    font-family: "Arial";
     font-size: 0.9em;
     color: #7f8c8d;
     font-weight: bold;
@@ -139,7 +150,8 @@ h1 {
 /* === TÍTULO DO FORMULÁRIO === */
 .form-title {
     font-size: 1.8em;
-    color: #2c3e50;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -160,9 +172,14 @@ h1 {
     color: #34495e;
 }
 
+.form-group label {
+    color: #333333;
+    font-family: "Arial";
+    margin-bottom: 8px;
+}
+
 /* === CAMPOS DO FORMULÁRIO === */
 input, select, textarea {
-    width: 100%;
     padding: 10px;
     border: 2px solid #bdc3c7;
     border-radius: 8px;
@@ -173,7 +190,7 @@ input, select, textarea {
 
 /* Efeito ao focar */
 input:focus, select:focus, textarea:focus {
-    border-color: #3498db;
+    border-color:rgb(182, 215, 237);
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
     background: white;
     outline: none;
@@ -197,6 +214,7 @@ input:focus, select:focus, textarea:focus {
     cursor: pointer;
     border: none;
     transition: all 0.3s ease-in-out;
+    font-family: "Arial";
 }
 
 .btn-save:hover {
@@ -216,10 +234,74 @@ input:focus, select:focus, textarea:focus {
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease-in-out;
+    font-family: "Arial";
 }
 
 .btn-cancel:hover {
     background: linear-gradient(135deg, #c0392b, #a93226);
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(231, 76, 60, 0.5);
+}
+
+/*== Div dos conteudos do index.html ==*/
+.index_principal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.index_conteudo {
+    width: 500px;
+    padding: 40px;
+    background-color:rgb(205, 221, 226);
+    border-radius: 15px;
+    height: 100vh;
+}
+
+/* == Botão Registrar e login==*/
+.btn-registrar {
+    background-color:rgb(18, 18, 18);
+    padding: 15px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.btn-login {
+    border-radius: 30px;
+    padding: 15px;
+    border: 3px solid #181818;
+}
+
+.deco-btn-registrar {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Arial";
+    font-weight: 600;
+}
+.deco-btn-login {
+    text-decoration: none;
+    color: #181818;
+    font-family: "Arial";
+    font-weight: 600;
+}
+
+.btn-index {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+/*== div dos textos ==*/
+
+.titulo {
+    margin-top: 50px;
+}
+
+.title-biblio {
+    font-size: 40px;
+    font-family: "Arial";
+}
+
+.title-paragrafo {
+    font-family: "Arial";
+    font-size: 18px;
 }
