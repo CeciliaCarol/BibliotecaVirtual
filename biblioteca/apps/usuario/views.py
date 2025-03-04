@@ -16,7 +16,7 @@ def registrar_usuario(request):
             user.backend = f"{backend.__module__}.{backend.__class__.__name__}"
 
             login(request, user)
-            return redirect("usuario:login")  # Redireciona após registro
+            return redirect("listar_livros")  # Redireciona após registro
     else:
         form = RegistroForm()
     
