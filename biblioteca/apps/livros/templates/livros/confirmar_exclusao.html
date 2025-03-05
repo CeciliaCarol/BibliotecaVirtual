@@ -1,10 +1,14 @@
 {% extends 'livros/base.html' %}
 
 {% block content %}
-<h2>Tem certeza que deseja excluir "{{ livro.titulo }}"?</h2>
-<form method="post">
+
+<form class="form-container" method="post">
+    <h2 class="form-title">Tem certeza que deseja excluir "{{ livro.titulo }}"?</h2>
     {% csrf_token %}
-    <button type="submit">Confirmar</button>
+    <div class="form-actions">
+      <button type="submit" class="btn-cancel" >Confirmar</button>
+      <a href="{% url 'listar_livros' %}" class="btn-save">Cancelar</a>
+    </div>
 </form>
-<a href="{% url 'listar_livros' %}">Cancelar</a>
+
 {% endblock %}
