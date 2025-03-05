@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <title>Registro</title>
     <link rel="stylesheet" href="{% static 'css/login_register-estilo.css' %}">
 </head>
@@ -51,18 +51,18 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const cpfInput = document.getElementById("id_cpf");  // Garante que o campo CPF seja encontrado corretamente
+            const cpfInput = document.getElementById("id_cpf");  // Máscara para CPF
+            const emailInput = document.getElementById("id_email");  // Máscara para E-mail
+            const usernameInput = document.getElementById("id_username"); // Placeholder para Nome de Usuário
+            const password1Input = document.getElementById("id_password1"); // Placeholder para Senha
+            const password2Input = document.getElementById("id_password2"); // Placeholder para Confirme a Senha
 
             if (cpfInput) {
-                cpfInput.setAttribute("maxlength", "14");  // Define o tamanho máximo com máscara
-                cpfInput.setAttribute("placeholder", "XXX.XXX.XXX-XX");  // Adiciona um placeholder
-
-                cpfInput.addEventListener("input", function (event) {
-                    let value = cpfInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-
-                    if (value.length > 11) value = value.slice(0, 11); // Garante no máximo 11 dígitos
-
-                    // Aplica a máscara
+                cpfInput.setAttribute("maxlength", "14");
+                cpfInput.setAttribute("placeholder", "XXX.XXX.XXX-XX");
+                cpfInput.addEventListener("input", function () {
+                    let value = cpfInput.value.replace(/\D/g, "");
+                    if (value.length > 11) value = value.slice(0, 11);
                     if (value.length > 9) {
                         value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, "$1.$2.$3-$4");
                     } else if (value.length > 6) {
@@ -70,12 +70,30 @@
                     } else if (value.length > 3) {
                         value = value.replace(/^(\d{3})(\d{1,3})$/, "$1.$2");
                     }
-
                     cpfInput.value = value;
                 });
             }
+
+            if (emailInput) {
+                emailInput.setAttribute("placeholder", "exemplo@gmail.com");
+                emailInput.addEventListener("input", function () {
+                    let value = emailInput.value.replace(/[^a-zA-Z0-9@._-]/g, "");
+                    emailInput.value = value;
+                });
+            }
+
+            if (usernameInput) {
+                usernameInput.setAttribute("placeholder", "Digite seu nome de usuário");
+            }
+
+            if (password1Input) {
+                password1Input.setAttribute("placeholder", "Digite sua senha");
+            }
+
+            if (password2Input) {
+                password2Input.setAttribute("placeholder", "Confirme sua senha");
+            }
         });
     </script>
-
 </body>
 </html>

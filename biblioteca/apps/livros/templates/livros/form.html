@@ -16,4 +16,12 @@
             </div>
         </form>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("id_titulo").setAttribute("placeholder", "Digite o título do livro");
+            document.getElementById("id_autor").setAttribute("placeholder", "Nome do autor");
+            document.getElementById("id_generos").setAttribute("placeholder", "Nome do Gênero");
+            document.getElementById("id_paginas").setAttribute("placeholder", "Digite o número de Páginas");
+        });
+    </script>
 {% endblock %}
