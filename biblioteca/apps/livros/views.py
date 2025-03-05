@@ -2,10 +2,16 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Livro
 from .forms import LivroForm
 from django.contrib.auth.decorators import login_required
+import random
 
 @login_required
 def listar_livros(request):
-    livros = Livro.objects.filter(usuario=request.user)
+    livros = Livro.objects.filter(usuario=request.user).order_by('-id')
+
+    #Gerar uma cor única
+    for livro in livros:
+        livro.cor = f"#{random.randint(0, 0xFFFFFF):06x}"
+
     return render(request, 'livros/listar.html', {'livros': livros})
 
 @login_required
@@ -40,3 +46,5 @@ def excluir_livro(request, id):
         livro.delete()
         return redirect('listar_livros')
     return render(request, 'livros/confirmar_exclusao.html', {'livro': livro})
+
+  
