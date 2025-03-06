@@ -3,7 +3,9 @@
 {% block content %}
     
         <nav class="navbar">
-          <div class="logo">Biblioteca Virtual</div>
+          <div class="logo">
+            <img src="{% static 'svgs/logo.svg' %}" alt="Logo" width="150">
+          </div>
           <div class="deco-btn-sair-nav">
             <div class="logo">{{ request.user.username }}</div>
             <a class="deco-btn-sair-nav" href="{% url 'usuario:login' %}">Sair</a>

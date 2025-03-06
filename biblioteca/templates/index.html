@@ -8,38 +8,29 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="logo">Biblioteca Virtual</div>
+    <div class="logo">
+      <img src="{% static 'svgs/logo.svg' %}" alt="Logo" width="150">
+    </div>
     <div class="btn-index">
-      <div class="btn-registrar-nav">
-        <a class="deco-btn-registrar-nav" href="{% url 'usuario:register' %}">Registro</a> 
-      </div>
       <div class="btn-login-nav">
-        <a class="deco-btn-login-nav" href="{% url 'usuario:login' %}">Login</a>
+        <a class="deco-btn-login-nav" href="{% url 'usuario:login' %}">Entrar</a> 
+      </div>
+      <div class="btn-registrar-nav">
+        <a class="deco-btn-registrar-nav" href="{% url 'usuario:register' %}">Registro</a>
       </div>
     </div>
   </nav>
 <div class="index_principal">
   <div class="index_conteudo">
     <div class="titulo">
-      <h1 class="title-biblio">Biblioteca Virtual!</h1>
+      <h1 class="title-biblio">Pare de perder seus <br> livros pelo caminho</h1>
       <p class="title-paragrafo">
-        Plataforma gratuita onde você pode cadastrar
-        seus livros favoritos.
+        Cadastre sua coleção e tenha sempre sua biblioteca organizada.
       </p>
-    </div>
-    <div class="btn-index">
-      <div class="btn-registrar">
-        <a class="deco-btn-registrar" href="{% url 'usuario:register' %}">Registro</a> 
-      </div>
-      <div class="btn-login">
-        <a class="deco-btn-login" href="{% url 'usuario:login' %}">Login</a>
-      </div>
     </div>
   </div>
   <div class="index_imagem">
-    <div class="livro_1">
-      <div class="bookmark"></div>
-    </div>
+    <img class="imagem-livros" src="{% static 'svgs/livros.svg' %}" alt="livros e vaso de plantas">
   </div>
 </div>
 </body>

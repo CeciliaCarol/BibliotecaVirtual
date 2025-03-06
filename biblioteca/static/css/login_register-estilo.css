@@ -14,6 +14,19 @@ h2 {
     font-family: 'Poppins' sans-serif;
 }
 
+.l-imagem {
+    width: 100vh;
+    margin-top: auto;
+    margin-left: inherit;
+}
+
+.g-imagem {
+    width: 100vh;
+    margin-top: auto;
+    margin-right: inherit;
+    margin-left: 40px;
+}
+
 /* Estilo para o formulário */
 form {
     background-color: #fff;
